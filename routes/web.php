@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\studentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[ProductController::class, 'index'])->name('home');
-Route::post('/save-products',[ProductController::class, 'save_products'])->name('saveProducts');
-Route::get('/delete-products/{id}', [ProductController::class, 'delete_products'])->name('removeProducts');
-Route::get('/update-products/{id}', [ProductController::class, 'update_products'])->name('updateProducts');
-Route::post('/save-updated-products', [ProductController::class, 'save_updated_products'])->name('saveUpdatedProducts');
+Route::get('/',[StudentController::class, 'index'])->name('home');
+Route::post('/save-students',[studentController::class, 'save_students'])->name('savestudents');
+Route::get('/delete-students/{id}', [studentController::class, 'delete_students'])->name('removestudents');
+Route::get('/update-students/{id}', [studentController::class, 'update_students'])->name('updatestudents');
+Route::post('/save-updated-students', [studentController::class, 'save_updated_students'])->name('saveUpdatedstudents');

@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="card my-4">
-    <form action="{{ route('saveProducts')}}" method="post">
+    <form action="{{ route('saveStudents')}}" method="post">
         @csrf
         <div class="card-body">
             <div class="row">
                 <div class="col mb-3">
-                    <label for="p_name" class="form-label">Product Name</label>
-                    <input type="text" class="form-control" name="product_name" >
+                    <label for="p_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" >
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="description" class="form-label">Description</label>
@@ -42,8 +42,8 @@
         </tr>
     </thead>
     <tbody>
-        @if ($products)
-            @foreach ($products as $product)
+        @if ($Students)
+            @foreach ($Students as $product)
                 <tr>
                     <th scope="row">{{$product->id}}</th>
                     <td>{{$product->product_name}}</td>
@@ -51,8 +51,8 @@
                     <td>{{$product->price}}</td>
                     <td>{{$product->quantityinstock}}</td>
                     <td>
-                        <a href="{{route('updateProducts', $product->id)}}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button></a>
-                        <a href="{{route('removeProducts', $product->id)}}"><button type="button" class="btn btn-danger"> <i class="bi bi-trash"></i></button></a>
+                        <a href="{{route('updateStudents', $product->id)}}"><button type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button></a>
+                        <a href="{{route('removeStudents', $product->id)}}"><button type="button" class="btn btn-danger"> <i class="bi bi-trash"></i></button></a>
                         
                     </td>
                 </tr>
